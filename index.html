@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Валерия Вильмон — нарратив, сценарии, ИИ</title>
+    <meta name="description" content="Нарративный дизайнер и сценаристка. Довожу историю до играбельного прототипа с помощью ИИ: Almost a Witch, Digital Mercy, DeckForge, ИИ-ролики для эфира." />
+    <meta property="og:title" content="Валерия Вильмон — нарратив, сценарии, ИИ" />
+    <meta property="og:description" content="Нарративный дизайнер и сценаристка. Довожу историю до играбельного прототипа с помощью ИИ." />
+    <meta property="og:image" content="/assets/img/valeria.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script>document.documentElement.classList.add("js")</script>
+    <link rel="stylesheet" href="/styles.css?v=15" />
+  </head>
+  <body>
+    <!-- Boot: the visitor is "connected" to the institute's terminal. -->
+    <div class="boot" id="boot" aria-hidden="true">
+      <div class="boot__inner">
+        <p class="boot__org">ИНСТИТУТ ЦИФРОВОГО ПЕРЕНОСА СОЗНАНИЯ</p>
+        <pre class="boot__log" id="bootLog"></pre>
+        <p class="boot__skip">нажмите любую клавишу, чтобы пропустить</p>
+      </div>
+    </div>
+
+    <div class="crt" aria-hidden="true"></div>
+
+    <header class="bar">
+      <a class="bar__id" href="#top"><span class="dot"></span>СУБЪЕКТ: ВИЛЬМОН В.</a>
+      <nav class="bar__nav" aria-label="Разделы">
+        <a href="#witch">Игра</a>
+        <a href="#mercy">Сценарий</a>
+        <a href="#deckforge">DeckForge</a>
+        <a href="#video">ИИ-видео</a>
+        <a href="#code">Код</a>
+        <a href="#resume">Резюме</a>
+        <a href="#contact" class="bar__cta">Связаться</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- HERO: the avatar fills the screen; glowing wires run from her head to each memory. -->
+      <section class="hero" id="hero">
+        <div class="hud" aria-hidden="true">
+          <i class="hud__plus hud__plus--tl"></i><i class="hud__plus hud__plus--tr"></i>
+          <i class="hud__cross"></i>
+          <i class="hud__rail hud__rail--l"></i><i class="hud__rail hud__rail--r"></i>
+          <span class="hud__tag hud__tag--tl">СКАН ЛИЧНОСТИ · СИНХРОНИЗАЦИЯ <b id="sync">0</b>%</span>
+          <span class="hud__tag hud__tag--br"><i></i>ПРОТОКОЛ ПЕРЕНОСА</span>
+        </div>
+
+        <div class="portrait" id="portrait">
+          <div class="portrait__img">
+            <img src="/assets/img/valeria-avatar.webp" alt="Валерия Вильмон, цифровой аватар" width="1414" height="1426" />
+            <div class="portrait__scan"></div>
+          </div>
+        </div>
+
+        <svg class="wires" id="wires" aria-hidden="true"></svg>
+
+        <ul class="nodes" id="nodes">
+          <li class="node" data-target="witch" data-side="l" data-sensor="0" data-for="vibe narrative">
+            <a href="#witch"><span class="node__n">01</span><span class="node__t">Almost a Witch</span><span class="node__s">своя игра, от идеи до релиза</span></a>
+            <img class="node__peek" src="/assets/img/witch-cover.webp" alt="" loading="lazy" />
+          </li>
+          <li class="node" data-target="mercy" data-side="l" data-sensor="1" data-for="narrative ai">
+            <a href="#mercy"><span class="node__n">02</span><span class="node__t">Digital Mercy</span><span class="node__s">сценарий, мир, 12 библий персонажей</span></a>
+            <img class="node__peek" src="/assets/img/dm-poster.webp" alt="" loading="lazy" />
+          </li>
+          <li class="node" data-target="deckforge" data-side="l" data-sensor="2" data-for="ai">
+            <a href="#deckforge"><span class="node__n">03</span><span class="node__t">DeckForge</span><span class="node__s">ИИ-контент для вышедшей игры</span></a>
+            <img class="node__peek" src="/assets/img/deck-round.webp" alt="" loading="lazy" />
+          </li>
+          <li class="node" data-target="code" data-side="r" data-sensor="3" data-for="vibe">
+            <a href="#code"><span class="node__n">04</span><span class="node__t">Claude Code · Codex</span><span class="node__s">прототипы приложений и ролики кодом</span></a>
+            <img class="node__peek" src="/assets/video/odyssey.jpg" alt="" loading="lazy" />
+          </li>
+          <li class="node" data-target="video" data-side="r" data-sensor="4" data-for="ai">
+            <a href="#video"><span class="node__n">05</span><span class="node__t">ИИ-видео в эфире</span><span class="node__s">ГТРК, Россия-1, Россия-24</span></a>
+            <img class="node__peek" src="/assets/video/tukay.jpg" alt="" loading="lazy" />
+          </li>
+          <li class="node" data-target="contact" data-side="r" data-sensor="5" data-for="vibe ai narrative">
+            <a href="#contact"><span class="node__n">06</span><span class="node__t">Выйти на связь</span><span class="node__s">резюме, почта, Telegram</span></a>
+          </li>
+        </ul>
+
+        <div class="hero__title">
+          <h1 class="glitch" data-text="ВАЛЕРИЯ ВИЛЬМОН">ВАЛЕРИЯ ВИЛЬМОН</h1>
+          <p class="hero__role">Нарративный дизайнер и сценаристка. Довожу историю до играбельного прототипа с&nbsp;помощью ИИ.</p>
+        </div>
+
+        <div class="query">
+          <p class="query__q"><span class="caret">&gt;</span> Кого вы ищете?</p>
+          <div class="query__opts" role="group" aria-label="Кого вы ищете">
+            <button type="button" data-focus="narrative">Нарративный дизайнер</button>
+            <button type="button" data-focus="vibe">AI-assisted Game Prototyper</button>
+            <button type="button" data-focus="ai">Game Content Designer</button>
+          </div>
+          <p class="query__a" id="queryAnswer" aria-live="polite">Выберите запрос: память перестроится под него.</p>
+        </div>
+
+        <a class="hero__down" href="#memories" aria-label="К работам">↓ ВОСПОМИНАНИЯ</a>
+      </section>
+
+      <div class="memories" id="memories">
+        <!-- 01 ALMOST A WITCH -->
+        <section class="mem" id="witch" data-mem="witch">
+          <header class="mem__head">
+            <p class="mem__file">ВОСПОМИНАНИЕ 01 <span>/</span> ИГРА <span>/</span> <i class="ok">ДЕМО ВЫПУЩЕНО</i></p>
+            <h2>Almost a Witch</h2>
+            <p class="mem__lead">Моя игра, сделанная в одиночку: идея, сценарий, юмор, визуальный стиль и геймдизайн мои. Картинки и код генерировал ИИ под моим руководством, с диалогами он помогал.</p>
+          </header>
+
+          <div class="witch">
+            <figure class="witch__hero shot" data-full="/assets/img/witch-hut.webp">
+              <img src="/assets/img/witch-hut.webp" alt="Внутри избы ведьмы: героиня, ведьма и петух" loading="lazy" width="1280" height="722" />
+              <figcaption>«Get down. That's my chair.»</figcaption>
+            </figure>
+            <div class="witch__info">
+              <dl class="spec">
+                <div><dt>Жанр</dt><dd>2D-приключение с диалогами</dd></div>
+                <div><dt>Сеттинг</dt><dd>деревня, лес, избушка ведьмы</dd></div>
+                <div><dt>Моё</dt><dd>идея, сценарий, юмор, арт-дирекшн, геймдизайн</dd></div>
+                <div><dt>ИИ</dt><dd>картинки, код, помощь с диалогами</dd></div>
+              </dl>
+              <div class="links">
+                <a class="btn btn--primary" href="https://villlerri.itch.io/almost-a-witch" target="_blank" rel="noopener">▶ Играть на itch.io</a>
+                <a class="btn" href="/assets/docs/valeria-vilmon-writing-samples.pdf" target="_blank" rel="noopener">Writing Samples · PDF</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="strip">
+            <figure class="shot" data-full="/assets/img/witch-night.webp"><img src="/assets/img/witch-night.webp" alt="Ночь у избы" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/witch-tower.webp"><img src="/assets/img/witch-tower.webp" alt="Башня в ночном лесу" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/witch-map.webp"><img src="/assets/img/witch-map.webp" alt="Карта главы «Побег»" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/witch-village.webp"><img src="/assets/img/witch-village.webp" alt="Жители деревни" loading="lazy" /></figure>
+          </div>
+          <p class="sub">Разработка персонажей</p>
+          <div class="strip strip--sheets">
+            <figure class="shot" data-full="/assets/img/witch-sheet-heroine.webp"><img src="/assets/img/witch-sheet-heroine.webp" alt="Пенни, главная героиня: лист персонажа" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/witch-sheet-granny.webp"><img src="/assets/img/witch-sheet-granny.webp" alt="Бабушка: лист персонажа" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/witch-sheet-forester.webp"><img src="/assets/img/witch-sheet-forester.webp" alt="Лесник: лист персонажа" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/witch-sheet-animals.webp"><img src="/assets/img/witch-sheet-animals.webp" alt="Петух, кот и сорока" loading="lazy" /></figure>
+          </div>
+        </section>
+
+        <!-- 02 DIGITAL MERCY -->
+        <section class="mem" id="mercy" data-mem="mercy">
+          <header class="mem__head">
+            <p class="mem__file">ВОСПОМИНАНИЕ 02 <span>/</span> СЦЕНАРИЙ <span>/</span> <i>ГОТОВ К ПРОИЗВОДСТВУ</i></p>
+            <h2>Digital Mercy</h2>
+            <p class="mem__lead">Психологическая драма об институте, который переносит сознание умирающих в цифровые комнаты. Мой мир: сценарий сериала, короткометражная версия, 12 библий персонажей, визуальная разработка, тизер.</p>
+          </header>
+
+          <div class="mercy">
+            <figure class="mercy__poster shot" data-full="/assets/img/dm-poster.webp">
+              <img src="/assets/img/dm-poster.webp" alt="Постер Digital Mercy" loading="lazy" width="768" height="1376" />
+            </figure>
+
+            <div class="term">
+              <div class="term__bar"><span></span><span></span><span></span><b>digital_mercy_v13.txt · сцена 1-3</b></div>
+              <div class="script" tabindex="0">
+                <p class="sl">1-3. ИНТ. КАБИНЕТ ЛИЗЫ. ДЕНЬ 1</p>
+                <p class="ac">На стене — детский рисунок в самодельной рамке: разноцветная карта, подпись детским почерком: «Мир, где никто не болеет». Напротив Лизы — ЭММА (22), бледная, взвинченная, с маленьким чёрным лохматым псом ГИЛОМ на руках.</p>
+                <p class="ch">ЭММА</p>
+                <p class="dl">...он тихий, честно. Да и у нас ведь будет своя комната, кому он там помешает? Может, в виде исключения?</p>
+                <p class="ch">ЛИЗА <i>(терпеливо)</i></p>
+                <p class="dl">Мы не переносим животных. Без исключений.</p>
+                <p class="ch">ЭММА <i>(вспыхивает)</i></p>
+                <p class="dl">Он не животное. <i>(спохватившись)</i> Ну то есть — конечно, животное. Но он... он без меня не сможет.</p>
+                <p class="ch">ЛИЗА <i>(сухо)</i></p>
+                <p class="dl">Перенос необратим. Только по добровольному согласию. <i>(на Гила)</i> А он согласия дать не может.</p>
+                <p class="ac">Эмма прижимает Гила к себе, будто его уже отбирают.</p>
+                <p class="ch">ЛИЗА <i>(мягче)</i></p>
+                <p class="dl">Я поставлю вас на завтра.</p>
+                <p class="ac">Эмма с надеждой поднимает глаза.</p>
+                <p class="ch">ЛИЗА</p>
+                <p class="dl">Одну.</p>
+                <p class="ac">Надежда гаснет.</p>
+                <p class="ch">ЭММА <i>(тихо)</i></p>
+                <p class="dl">Тогда я зря пришла. <i>(Гилу)</i> Пойдём, малыш.</p>
+                <p class="ac">Пальцы Лизы сжимают край стола. Она опускает глаза в планшет — и не читает. Эмма уже у двери.</p>
+                <p class="ch">ЛИЗА <i>(резко)</i></p>
+                <p class="dl">Подождите.</p>
+                <p class="ac">Лиза сама не ждала от себя этого слова.</p>
+                <p class="cut"><a href="https://t.me/Villlerri" target="_blank" rel="noopener">ПРОДОЛЖЕНИЕ — В ПОЛНОМ СЦЕНАРИИ: ЗАПРОСИТЬ →</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="why">
+            <div><b>Выбор без правильного ответа</b><p>Сочувствие против правила, на котором держится вся жизнь героини. Вся дилемма игрового нарратива в одной сцене.</p></div>
+            <div><b>Детали, которые выстреливают</b><p>Детский рисунок, блокнот, бейдж. Каждая вещь в кадре возвращается в финале и меняет смысл.</p></div>
+            <div><b>Подтекст вместо объяснений</b><p>Персонажи говорят мало, а решают много. Чувства видны в жестах.</p></div>
+          </div>
+
+          <figure class="memq" id="memq">
+            <div class="memq__hud" aria-hidden="true">
+              <span>ФРАГМЕНТ ПАМЯТИ #4309</span>
+              <span>ЦЕЛОСТНОСТЬ <b id="memqPct">100</b>%</span>
+            </div>
+            <div class="memq__bar" aria-hidden="true"><i id="memqBar"></i></div>
+            <blockquote class="memq__text" id="memqText">Мы не исчезаем, пока нас помнят</blockquote>
+            <figcaption class="memq__hint">Без внимания фраза распадается. Наведите курсор или коснитесь, чтобы вспомнить.</figcaption>
+          </figure>
+
+          <div class="media2">
+            <figure class="vid">
+              <video src="/assets/video/dm-teaser.mp4" poster="/assets/video/dm-teaser.jpg" controls preload="none" playsinline></video>
+              <figcaption>Тизер Digital Mercy · ИИ-видео</figcaption>
+            </figure>
+            <figure class="vid vid--tall">
+              <video src="/assets/video/eliza-card.mp4" poster="/assets/video/eliza-card.jpg" controls preload="none" playsinline></video>
+              <figcaption>Видеовизитка главной героини</figcaption>
+            </figure>
+          </div>
+
+          <p class="sub">Мир и персонажи</p>
+          <div class="cast">
+            <figure class="shot" data-full="/assets/img/dm-mor.webp"><img src="/assets/img/dm-mor.webp" alt="Старик Мор" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-eliza.webp"><img src="/assets/img/dm-eliza.webp" alt="Персонаж Digital Mercy" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-victoria.webp"><img src="/assets/img/dm-victoria.webp" alt="Персонаж Digital Mercy" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-daniel.webp"><img src="/assets/img/dm-daniel.webp" alt="Персонаж Digital Mercy" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-emma.webp"><img src="/assets/img/dm-emma.webp" alt="Персонаж с псом" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-teo.webp"><img src="/assets/img/dm-teo.webp" alt="Персонаж Digital Mercy" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-anna.webp"><img src="/assets/img/dm-anna.webp" alt="Персонаж Digital Mercy" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-chess.webp"><img src="/assets/img/dm-chess.webp" alt="Персонаж Digital Mercy" loading="lazy" /></figure>
+          </div>
+          <div class="strip strip--places">
+<figure class="shot" data-full="/assets/img/dm-bodies.webp"><img src="/assets/img/dm-bodies.webp" alt="Эмма и Гил под одной простынёй" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-eyes.webp"><img src="/assets/img/dm-eyes.webp" alt="Глаза героини крупным планом" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-transfer.webp"><img src="/assets/img/dm-transfer.webp" alt="Лаборатория с капсулой переноса" loading="lazy" /></figure>
+            <figure class="shot" data-full="/assets/img/dm-protest.webp"><img src="/assets/img/dm-protest.webp" alt="Протест на ночной улице: «Soul is not a number»" loading="lazy" /></figure>
+          </div>
+        </section>
+
+        <!-- 03 DECKFORGE -->
+        <section class="mem" id="deckforge" data-mem="deckforge">
+          <header class="mem__head">
+            <p class="mem__file">ВОСПОМИНАНИЕ 03 <span>/</span> ИИ-КОНТЕНТ ДЛЯ ИГРЫ <span>/</span> <i class="ok">В РЕЛИЗЕ</i></p>
+            <h2>DeckForge</h2>
+            <p class="mem__lead">Мобильный карточный роглайк, май 2025 – январь 2026. В команду меня взяли после пробной партии контента. Вся визуальная часть ниже сделана мной с помощью ИИ: карты, боссы, маскот и рекламные ролики на Veo 3.</p>
+          </header>
+          <div class="deck">
+            <div class="deck__phones">
+              <figure class="phone shot" data-full="/assets/img/deck-round.webp"><img src="/assets/img/deck-round.webp" alt="DeckForge: раунд" loading="lazy" /></figure>
+              <figure class="phone shot" data-full="/assets/img/deck-jokers.webp"><img src="/assets/img/deck-jokers.webp" alt="DeckForge: магазин джокеров" loading="lazy" /></figure>
+              <figure class="phone shot" data-full="/assets/img/deck-citadel.webp"><img src="/assets/img/deck-citadel.webp" alt="DeckForge: цитадель" loading="lazy" /></figure>
+              <figure class="phone vid"><video src="/assets/video/deckforge.mp4" poster="/assets/video/deckforge.jpg" controls preload="none" playsinline></video></figure>
+            </div>
+            <div class="deck__side">
+              <ul class="ticks">
+                <li>Карты джокеров и боссов</li>
+                <li>Маскот и его «подкаст» для соцсетей</li>
+                <li>Рекламные ролики на Veo 3</li>
+                <li>Игра вышла: VK Игры, RuStore, Telegram Apps</li>
+              </ul>
+              <div class="links">
+                <a class="btn" href="https://www.rustore.ru/catalog/app/net.deckforge.game" target="_blank" rel="noopener">RuStore</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 04 CLAUDE CODE -->
+        <section class="mem" id="code" data-mem="code">
+          <header class="mem__head">
+            <p class="mem__file">ВОСПОМИНАНИЕ 04 <span>/</span> ВАЙБКОДИНГ <span>/</span> <i>АКТИВНО</i></p>
+            <h2>Claude Code · Codex</h2>
+            <p class="mem__lead">Собираю рабочие прототипы приложений вместе с ИИ-агентами: я придумываю продукт, пишу ТЗ и сценарии использования, тестирую и веду правки, агент пишет код. Ниже записи экрана настоящих прототипов на демо-данных.</p>
+          </header>
+
+          <div class="protos">
+            <article class="proto proto--wide">
+              <figure class="screen vid">
+                <div class="screen__bar"><span></span><span></span><span></span><b>newsroom · демо-редакция «Заречье-ТВ»</b></div>
+                <video src="/assets/video/newsroom-1.mp4" poster="/assets/video/newsroom-1.jpg" controls muted preload="none" playsinline></video>
+              </figure>
+              <div class="proto__txt">
+                <p class="proto__tag">ДЕСКТОП-ПРИЛОЖЕНИЕ · ТВ-НОВОСТИ</p>
+                <h3>Программа для выпуска новостей</h3>
+                <p>Корреспондент загружает исходники, а система делает расшифровку с таймкодами. Из неё рождаются черновики синхронов, титров, закадрового текста и подводки. Каждый факт кликается и ведёт к месту в исходнике, редактор утверждает сюжет и собирает выпуск.</p>
+                <ul class="chips"><li>роли: корреспондент / редактор</li><li>расшифровка + таймкоды</li><li>проверка фактов по исходнику</li><li>медиатека и выпуски</li></ul>
+              </div>
+            </article>
+            <article class="proto">
+              <figure class="screen vid">
+                <div class="screen__bar"><span></span><span></span><span></span><b>newsroom · выпуски</b></div>
+                <video src="/assets/video/newsroom-2.mp4" poster="/assets/video/newsroom-2.jpg" controls muted preload="none" playsinline></video>
+              </figure>
+              <div class="proto__txt">
+                <p class="proto__tag">ВТОРОЙ ПУЛ ДОРАБОТОК</p>
+                <h3>Выпуски и медиатека</h3>
+                <p>Сетка выпусков, импорт файлов с учебного диска, очередь «ждут утверждения».</p>
+              </div>
+            </article>
+            <article class="proto">
+              <figure class="screen vid">
+                <div class="screen__bar"><span></span><span></span><span></span><b>выкладка · календарь</b></div>
+                <video src="/assets/video/calendar.mp4" poster="/assets/video/calendar.jpg" controls muted preload="none" playsinline></video>
+              </figure>
+              <div class="proto__txt">
+                <p class="proto__tag">ВЕБ-ПРИЛОЖЕНИЕ · YOUTUBE</p>
+                <h3>Календарь выкладки роликов</h3>
+                <p>Один календарь на все каналы. У каждого ролика есть статус, комплект для загрузки (mp4, обложка, SRT) и пошаговый чек-лист выкладки на YouTube.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="code">
+            <figure class="phone vid">
+              <video src="/assets/video/odyssey.mp4" poster="/assets/video/odyssey.jpg" controls preload="none" playsinline></video>
+              <figcaption>LearnLoop: «Одиссея», правда или выдумка</figcaption>
+            </figure>
+            <div>
+              <p class="sub" style="margin-top:0">Шортсы кодом, без видеоредактора</p>
+              <p class="mem__lead" style="margin:0 0 24px">Обучающие ролики канала LearnLoop целиком собраны кодом в Claude Code: анимация, вёрстка кадров, тайминг.</p>
+              <ol class="pipe">
+                <li><b>Идея</b><span>о чём продукт и зачем он людям</span></li>
+                <li><b>Сценарий</b><span>пользовательские сценарии, тексты, ветки</span></li>
+                <li><b>Агент</b><span>Claude Code / Codex пишет код по моему ТЗ</span></li>
+                <li><b>Прототип</b><span>тестирую, правлю, повторяю</span></li>
+                <li><b>Релиз</b><span>itch.io и рабочие инструменты</span></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- 05 AI VIDEO -->
+        <section class="mem" id="video" data-mem="video">
+          <header class="mem__head">
+            <p class="mem__file">ВОСПОМИНАНИЕ 05 <span>/</span> ИИ-ПРОДАКШН <span>/</span> <i class="ok">В ЭФИРЕ</i></p>
+            <h2>ИИ-видео для эфира</h2>
+            <p class="mem__lead">ГТРК «Татарстан», с апреля 2026. Генерирую видео для рубрики «Геройлар» и проекта «Родная речь» ко Дню Тукая. Ролики выходят в эфир Россия-1 и Россия-24. Моя часть: раскадровка, промпты, генерация и анимация через нейросети, сборка и сдача.</p>
+          </header>
+          <div class="media2">
+            <figure class="vid">
+              <video src="/assets/video/tukay.mp4" poster="/assets/video/tukay.jpg" controls preload="none" playsinline></video>
+              <figcaption>«Родная речь» ко Дню Тукая · эфир Россия-24</figcaption>
+            </figure>
+            <div class="facts">
+              <div><b>2</b><span>федеральных канала: Россия-1 и Россия-24</span></div>
+              <div><b>5</b><span>роликов для рубрики «Геройлар»</span></div>
+              <div><b>12</b><span>ИИ-роликов в портфолио: книги, мифы, реклама, тизеры</span></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Career log -->
+      <section class="log" id="log">
+        <header class="mem__head">
+          <p class="mem__file">ЖУРНАЛ ПЕРЕНОСА <span>/</span> ОПЫТ</p>
+          <h2>Опыт и проекты</h2>
+        </header>
+
+        <ol class="sessions">
+          <li class="sess">
+            <div class="sess__meta"><time>апр 2026 — сейчас</time><span class="sess__tag">ИИ-ПРОДАКШН</span></div>
+            <div class="sess__body">
+              <h3>ГТРК «Татарстан»</h3>
+              <p class="sess__role">Ассистент режиссёра · AI-генератор видеоконтента</p>
+              <ul><li>Ролики для рубрики «Геройлар» уже выходят на Россия-1, ролик «Родная речь» ко Дню Тукая вышел на Россия-24.</li><li>AI-контент для плазменных панелей в кадре, по согласованию с режиссёром.</li></ul>
+            </div>
+          </li>
+          <li class="sess">
+            <div class="sess__meta"><time>май 2025 — янв 2026</time><span class="sess__tag">ИИ-КОНТЕНТ · ГЕЙМДЕВ</span></div>
+            <div class="sess__body">
+              <h3>DeckForge · мобильный карточный роглайк</h3>
+              <p class="sess__role">Дизайнер внутриигрового контента</p>
+              <ul><li>Попала в команду после того, как сама сгенерировала первую пробную партию контента.</li><li>Вместе с арт-директором: карты, иконки боссов, ресурсы и фоны; аватары и маскот.</li><li>Короткие рекламные ролики на Veo 3. Проект вышел в релиз.</li></ul>
+            </div>
+          </li>
+          <li class="sess">
+            <div class="sess__meta"><time>2025</time><span class="sess__tag">РЕЖИССУРА</span></div>
+            <div class="sess__body">
+              <h3>Клип на городской конкурс «День первокурсника»</h3>
+              <p class="sess__role">Сценарист · режиссёр · продюсер</p>
+              <ul><li>Полный творческий цикл в одном лице: сценарий, режиссура, продюсирование площадки. 2 место.</li></ul>
+            </div>
+          </li>
+          <li class="sess">
+            <div class="sess__meta"><time>мар — май 2024</time><span class="sess__tag">ПРОДАКШН</span></div>
+            <div class="sess__body">
+              <h3>IZH VIDEO PRODUCTION</h3>
+              <p class="sess__role">Исполнительный продюсер</p>
+              <ul><li>Проекты для авиакомпании «Ижавиа» и медицинского центра «Медиаль»: сметы, площадки, съёмочные команды, сдача.</li></ul>
+            </div>
+          </li>
+
+          <li class="sess sess--big">
+            <div class="sess__meta"><time>май 2020 — дек 2023</time><span class="sess__tag sess__tag--pink">ГЕЙМДИЗАЙН ОФЛАЙН</span></div>
+            <div class="sess__body">
+              <h3>PLAYERS · клуб с VR, ретро-приставками и открытой кухней</h3>
+              <p class="sess__role">Руководитель проекта · соавтор бизнес-плана</p>
+              <p class="sess__lead">Клуб, который я придумала и открыла с нуля. Это был мой первый «геймдизайн»: вместо уровней — залы, вместо игроков — гости, которые должны захотеть вернуться.</p>
+              <div class="perks">
+                <div><b>Сохранение прогресса по номеру телефона</b><p>Придумала систему: гость называет номер, и его игровой прогресс поднимается на любой приставке. Уникальную прошивку мы сделали с приглашённым разработчиком. Гости возвращались, чтобы пройти игру дальше.</p></div>
+                <div><b>Игровое меню</b><p>Меню игр с описаниями и уровнем сложности, чтобы новичок и хардкорщик сразу нашли своё. Открытую кухню придумали вместе с шеф-поваром.</p></div>
+                <div><b>Концепция и зоны</b><p>Зоны с приставками и VR, VIP-зона с игровыми ПК. Нашла и вела дизайнеров и строителей на ремонте.</p></div>
+                <div><b>Бизнес</b><p>Написала бизнес-план и привлекла инвестиции. Собрала команду, выстроила процессы и сопровождала клуб после запуска.</p></div>
+              </div>
+              <div class="players">
+                <figure class="shot" data-full="/assets/img/players-entrance.webp"><img src="/assets/img/players-entrance.webp" alt="PLAYERS: входная группа" loading="lazy" /></figure>
+                <figure class="shot" data-full="/assets/img/players-neon.webp"><img src="/assets/img/players-neon.webp" alt="PLAYERS: игровой зал с неоном" loading="lazy" /></figure>
+                <figure class="shot" data-full="/assets/img/players-hall.webp"><img src="/assets/img/players-hall.webp" alt="PLAYERS: зал с экраном" loading="lazy" /></figure>
+                <figure class="shot" data-full="/assets/img/players-lounge.webp"><img src="/assets/img/players-lounge.webp" alt="PLAYERS: лаунж-зона" loading="lazy" /></figure>
+                <figure class="shot" data-full="/assets/img/players-corridor.webp"><img src="/assets/img/players-corridor.webp" alt="PLAYERS: неоновый коридор" loading="lazy" /></figure>
+              </div>
+            </div>
+          </li>
+
+          <li class="sess">
+            <div class="sess__meta"><time>сейчас</time><span class="sess__tag">ОБРАЗОВАНИЕ</span></div>
+            <div class="sess__body">
+              <h3>КазГИК · режиссура кино и телевидения</h3>
+              <p class="sess__role">2 курс, заочно</p>
+              <ul><li>Дополнительно: Литературная лаборатория (Альметьевск), программа «Сценаристика / писательство».</li></ul>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact" id="contact">
+        <p class="mem__file">ПЕРЕНОС ЗАВЕРШЁН <span>/</span> ОЖИДАЮ ОТВЕТА</p>
+        <h2 class="glitch" data-text="Давайте поработаем">Давайте поработаем</h2>
+        <p>Ищу работу в геймдеве: нарративным дизайнером или разработчиком игровых прототипов с ИИ. Дополнительно — опыт видеопродакшна и ИИ-роликов для эфира. Живу в Казани, готова к переезду.</p>
+        <div class="cv" id="resume">
+          <div class="cv__item"><a class="btn btn--cv" href="/assets/docs/valeria-vilmon-narrative-designer.pdf" download>↓ Резюме — Narrative Designer</a><a class="cv__en" href="/assets/docs/valeria-vilmon-narrative-designer-en.pdf" download aria-label="Резюме Narrative Designer на английском">EN</a></div>
+          <div class="cv__item"><a class="btn btn--cv" href="/assets/docs/valeria-vilmon-ai-game-developer.pdf" download>↓ Резюме — AI Game Prototyper</a><a class="cv__en" href="/assets/docs/valeria-vilmon-ai-game-developer-en.pdf" download aria-label="Резюме AI Game Prototyper на английском">EN</a></div>
+          <div class="cv__item"><a class="btn btn--cv" href="/assets/docs/valeria-vilmon-writing-samples.pdf" target="_blank" rel="noopener">Writing Samples · Almost a Witch</a></div>
+        </div>
+        <div class="links">
+          <a class="btn btn--primary" href="https://t.me/Villlerri" target="_blank" rel="noopener">Telegram · @Villlerri</a>
+          <a class="btn" href="mailto:villlerri@yandex.ru">villlerri@yandex.ru</a>
+          <a class="btn" href="https://villlerri.itch.io/" target="_blank" rel="noopener">itch.io</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">© Валерия Вильмон · сайт собран с Claude Code</footer>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <button type="button" class="lightbox__close" aria-label="Закрыть">×</button>
+      <img alt="" />
+    </div>
+
+    <script src="/app.js?v=15" defer></script>
+  </body>
+</html>
